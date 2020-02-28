@@ -3,10 +3,6 @@
 Adalah module yang memungkinkan memanggil suatu event ketika suatu kejadian
 terjadi pada aplikasi, dan memanggil handler listener.
 
-Jika module worker terpasang, maka semua event akan dipanggil menggunakan
-worker. Tapi jika tidak ada, maka event akan langsung di panggil saat itu
-juga.
-
 ## instalasi
 
 Jalankan perintah di bawah di folder aplikasi:

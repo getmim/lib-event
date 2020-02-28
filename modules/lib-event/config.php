@@ -7,7 +7,7 @@
 
 return [
     '__name' => 'lib-event',
-    '__version' => '0.0.1',
+    '__version' => '0.0.2',
     '__git' => 'git@github.com:getphun/lib-event.git',
     '__license' => 'MIT',
     '__author' => [
@@ -28,10 +28,6 @@ return [
     ],
     'autoload' => [
         'classes' => [
-            'LibEvent\\Controller' => [
-                'type' => 'file',
-                'base' => 'modules/lib-event/controller'
-            ],
             'LibEvent\\Library' => [
                 'type' => 'file',
                 'base' => 'modules/lib-event/library'
@@ -39,19 +35,6 @@ return [
             'LibEvent\\Service' => [
                 'type' => 'file',
                 'base' => 'modules/lib-event/service'
-            ]
-        ]
-    ],
-
-    'routes' => [
-        'tool' => [
-            'toolEventBind' => [
-                'info' => 'Trigger some event',
-                'skipHelp' => true,
-                'path' => [
-                    'value' => 'event bind'
-                ],
-                'handler' => 'LibEvent\\Controller\\Event::bind'
             ]
         ]
     ],

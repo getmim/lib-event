@@ -7,28 +7,10 @@
 
 namespace LibEvent\Library;
 
-use LibWorker\Library\Worker;
-
 class Event
 {
     static function trigger(string $name, $data=null): void{
-        // call it now, or use worker
-        if(!module_exists('lib-worker')){
-            self::bind($name, $data);
-            return;
-        }
-
-        Worker::add($name, [
-            'route' => [
-                'name' => 'toolEventBind'
-            ],
-            'data' => (object)[
-                'name' => $name,
-                'data' => $data
-            ],
-            'time' => 0,
-            'loop' => 1
-        ]);
+        self::bind($name, $data);
     }
 
     static function bind(string $name, $data=null): void{
